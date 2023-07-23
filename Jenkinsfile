@@ -9,7 +9,7 @@ pipeline {
                     agent { label 'python-3-11' }
                     steps {
                         script {
-                            FooNotify.getString()
+                            getFoo()
                         }
                         container('python') {
                             sh '''
