@@ -5,7 +5,8 @@ class FooNotify {
 
     static String getString() {
         String formattedString = "This is an example: ${dupa}";
-        println("->" + formattedString)
+        println("->" + formattedString);
+
         return dupa;
     }
 }
