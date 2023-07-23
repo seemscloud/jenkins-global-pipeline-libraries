@@ -4,4 +4,4 @@ static def call(String format = "text", String type = "api", Map<String, String>
     return PublicIP.getAddress(format, type)
 }
 
-println(call())
+//println(call())
