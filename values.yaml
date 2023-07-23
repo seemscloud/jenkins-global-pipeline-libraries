@@ -71,6 +71,7 @@ controller:
                     scm:
                       git:
                         remote: https://github.com/seemscloud/jenkins-global-pipeline-libraries.git
+
       pipeline-jobs: |
         jobs:
           - script: >
