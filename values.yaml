@@ -47,7 +47,7 @@ controller:
     configScripts:
       welcome-message: |
         jenkins:
-          systemMessage: Welcome to our CI CD server.11
+          systemMessage: Welcome
       shared-libs: |
         unclassified:
           globalLibraries:
