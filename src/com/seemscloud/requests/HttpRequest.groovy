@@ -3,7 +3,7 @@ package com.seemscloud.requests
 import groovy.json.JsonSlurper
 
 class HttpRequest {
-    static LinkedHashMap<String, Object> getRequest(String url) {
+    static LinkedHashMap<String, Object> getRequestRaw(String url) {
         def connection = new URL(url).openConnection() as HttpURLConnection
         connection.requestMethod = 'GET'
 

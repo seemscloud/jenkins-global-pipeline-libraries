@@ -9,7 +9,7 @@ class PublicIP {
     static String getAddress(String format, String api) {
         String url = "https://${getApiType(api)}.ipify.org?format=${getFormatType(format)}"
 
-        LinkedHashMap<String, Object> result = HttpRequest.getRequest(url)
+        LinkedHashMap<String, Object> result = HttpRequest.getRequestRaw(url)
 
         if (result.responseCode == 200) {
             return result.response
