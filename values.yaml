@@ -1,0 +1,111 @@
+fullnameOverride: "jenkins"
+
+serviceAccount:
+  create: true
+
+controller:
+  componentName: "jenkins-controller"
+
+  image: "jenkins/jenkins"
+  tagLabel: jdk17
+
+  adminSecret: true
+  adminUser: "admin"
+  adminPassword: "admin"
+
+  serviceType: LoadBalancer
+  agentListenerServiceType: ClusterIP
+  servicePort: 8080
+  targetPort: 8080
+
+  jenkinsHome: "/var/jenkins_home"
+  installPlugins:
+    - git:5.1.0
+    - configuration-as-code:1647.ve39ca_b_829b_42
+    - kubernetes:3937.vd7b_82db_e347b_
+    - workflow-aggregator:596.v8c21c963d92d
+    - workflow-job:1316.vd2290d3341a_f
+    - ws-cleanup:0.45
+    - nodelabelparameter:1.12.0
+    - cloudbees-folder:6.815.v0dd5a_cb_40e0e
+    - job-dsl:1.84
+    - workflow-durable-task-step:1247.v7f9dfea_b_4fd0
+
+  installLatestPlugins: true
+  installLatestSpecifiedPlugins: false
+
+  sidecars:
+    configAutoReload:
+      enabled: true
+      reqRetryConnect: 1
+      env:
+        - name: REQ_TIMEOUT
+          value: "60"
+
+  JCasC:
+    defaultConfig: true
+    configScripts:
+      welcome-message: |
+        jenkins:
+          systemMessage: Welcome to our CI CD server.11
+      shared-libs: |
+        unclassified:
+          globalLibraries:
+            libraries:
+              - name: global-pipeline-libraries
+                defaultVersion: main
+                retriever:
+                  modernSCM:
+                    scm:
+                      git:
+                        remote: https://github.com/seemscloud/jenkins-global-pipeline-libraries.git
+      pipeline-jobs: |
+        jobs:
+          - script: >
+              folder('Foo');
+              folder('Foo/Bar');
+              pipelineJob('Foo/Bar/global-pipeline-libraries') {
+                definition {
+                  cpsScm {
+                    scm {
+                      git {
+                        remote {
+                          url('https://github.com/seemscloud/jenkins-global-pipeline-libraries.git')
+                        }
+                        branches('main')
+                      }
+                    }
+                    scriptPath('Jenkinsfile')
+                  }
+                }
+              }
+
+serviceAccountAgent:
+  create: true
+
+agent:
+  enabled: true
+  disableDefaultAgent: false
+  podTemplates:
+    python-3-11: |
+      - name: python-3-11
+        label: python-3-11
+        serviceAccount: jenkins-agent
+        containers:
+          - name: python
+            image: python:3.11-alpine3.18
+            command: "/bin/sh -c"
+            args: "cat"
+            ttyEnabled: true
+    python-3-10: |
+      - name: python-3-10
+        label: python-3-10
+        serviceAccount: jenkins-agent
+        containers:
+          - name: python
+            image: python:3.10-alpine3.18
+            command: "/bin/sh -c"
+            args: "cat"
+            ttyEnabled: true
+persistence:
+  enabled: false
