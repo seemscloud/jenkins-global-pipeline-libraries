@@ -1,13 +1,12 @@
 package src.com.seemscloud
 
-public static class CounterInternal {
-    static int count = 0
+class ExampleClass {
+    static String dupa = "statyczne gowno"
 
-    static void increment() {
-        count++
-    }
+    static String getString() {
+        String formattedString = "This is an example: ${dupa}"
+        println(formattedString)
 
-    static int getCount() {
-        return count
+        return dupa
     }
 }

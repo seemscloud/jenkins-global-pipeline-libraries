@@ -10,7 +10,7 @@ pipeline {
                     steps {
                         container('python') {
                             script {
-                                CounterInternal.getCount()
+                                ExampleClass.getString()
                             }
                             sh '''
                                 python3 --version
