@@ -6,11 +6,10 @@ class MyPublicIPAddress {
     static String getAddress() {
         def result = HttpRequest.sendGetRequest("https://api.ipify.org?format=json")
 
-        println("Status Code ${result.responseCode}")
         if (result.responseCode == 200) {
             return result.response
         } else {
-            return result.response
+            throw new Exception("Received a non 200 response code: ${result.responseCode}")
         }
     }
 }
