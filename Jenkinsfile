@@ -15,8 +15,7 @@ pipeline {
                                 echo "Output from var: ${var}"
                             }
                             sh '''
-                                echo "-> \$VAR_NAME"
-                                echo "x''' + var +  '''x"
+                                echo '''+var+'''
                                 python3 --version
                             '''
                         }
