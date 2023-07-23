@@ -21,9 +21,7 @@ controller:
   adminSecret: true
   adminUser: "admin"
   adminPassword: "admin"
-
   disableRememberMe: true
-  enableRawHtmlMarkupFormatter: true
 
   serviceType: LoadBalancer
   agentListenerServiceType: ClusterIP
@@ -94,7 +92,7 @@ controller:
 
 agent:
   enabled: true
-  disableDefaultAgent: false
+  disableDefaultAgent: true
   podTemplates:
     python-3-11: |
       - name: python-3-11
