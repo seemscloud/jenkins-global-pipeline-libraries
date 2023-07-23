@@ -7,12 +7,12 @@ class HttpRequest {
         def connection = new URL(url).openConnection() as HttpURLConnection
         connection.requestMethod = 'GET'
 
-        headers.each { key, value ->
+        headers.each { String key, String value ->
             connection.setRequestProperty(key, value)
         }
 
-        String responseCode = connection.responseCode
-        def response = connection.inputStream.text
+        int responseCode = connection.responseCode
+        String response = connection.inputStream.text
 
         def jsonResponse = null
         if (connection.contentType?.contains("application/json")) {
