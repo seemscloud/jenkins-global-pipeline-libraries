@@ -11,7 +11,13 @@ class HttpRequest {
             connection.setRequestProperty(key, value)
         }
 
-        int responseCode = connection.responseCode
+        int responseCode = 0
+        try {
+            responseCode = connection.responseCode
+        } catch (Exception e) {
+            throw new Exception("Error occurred during the HTTP connection: " + e.getMessage(), e);
+        }
+
         String response = connection.inputStream.text
 
         def jsonResponse = null
