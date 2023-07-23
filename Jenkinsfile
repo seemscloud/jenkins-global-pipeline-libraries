@@ -10,9 +10,9 @@ pipeline {
                     steps {
                         container('python') {
                             script {
-                                def GLOBAL_PL = getFoo()
-                                env.EXAMPLE = var
-                                echo "Output from var: ${var}"
+                                def getMyPublicIPAddress = getMyPublicIPAddress()
+                                env.EXAMPLE = getMyPublicIPAddress
+                                echo "Output from var: ${getMyPublicIPAddress}"
                             }
                             sh '''
                                 echo \$EXAMPLE
