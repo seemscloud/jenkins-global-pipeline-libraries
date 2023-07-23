@@ -3,6 +3,15 @@ fullnameOverride: "jenkins"
 serviceAccount:
   create: true
 
+serviceAccountAgent:
+  create: true
+
+persistence:
+  enabled: false
+
+rbac:
+  create: true
+
 controller:
   componentName: "jenkins-controller"
 
@@ -34,7 +43,8 @@ controller:
     - job-dsl:1.84
     - workflow-durable-task-step:1247.v7f9dfea_b_4fd0
 
-  overwritePluginsFromImage: false
+  overwritePlugins: false
+  overwritePluginsFromImage: true
   installLatestPlugins: true
   installLatestSpecifiedPlugins: false
 
@@ -82,9 +92,6 @@ controller:
                 }
               }
 
-serviceAccountAgent:
-  create: true
-
 agent:
   enabled: true
   disableDefaultAgent: false
@@ -109,6 +116,3 @@ agent:
             command: "/bin/sh -c"
             args: "cat"
             ttyEnabled: true
-
-persistence:
-  enabled: false
