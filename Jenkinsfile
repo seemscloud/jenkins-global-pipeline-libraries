@@ -1,6 +1,4 @@
 @Library('global-pipeline-libraries@main') _
-import com.seemscloud.ExampleClass
-
 
 pipeline {
     agent none
