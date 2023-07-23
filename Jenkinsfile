@@ -12,7 +12,7 @@ pipeline {
                     steps {
                         container('python') {
                             script {
-                                ExampleClass.getString()
+                                FooNotify.getString()
                             }
                             sh '''
                                 python3 --version
