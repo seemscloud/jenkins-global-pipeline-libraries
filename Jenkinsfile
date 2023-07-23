@@ -1,5 +1,7 @@
 @Library('global-pipeline-libraries@main') _
 
+import com.seemscloud
+
 def dupa = ExampleClass.getString()
 
 pipeline {
