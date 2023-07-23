@@ -14,6 +14,7 @@ controller:
   adminPassword: "admin"
 
   disableRememberMe: true
+  enableRawHtmlMarkupFormatter: true
 
   serviceType: LoadBalancer
   agentListenerServiceType: ClusterIP
