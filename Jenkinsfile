@@ -1,5 +1,9 @@
 @Library('global-pipeline-libraries@main') _
 
+def headers = [
+    'Content-Type': 'application/json'
+]
+
 pipeline {
     agent none
     stages {
@@ -10,7 +14,7 @@ pipeline {
                     steps {
                         container('python') {
                             script {
-                                def publicIpAddress = getPublicIPAddress("text", "api")
+                                def publicIpAddress = getPublicIPAddress("text", "api", headers)
                                 env.PUBLIC_UP_ADDRESS = publicIpAddress
                                 echo "Public IP Address Is: ${publicIpAddress}"
                             }
