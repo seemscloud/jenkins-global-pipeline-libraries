@@ -16,10 +16,10 @@ pipeline {
                             script {
                                 def publicIpAddress = getPublicIPAddress("text", "api", headers)
                                 env.PUBLIC_UP_ADDRESS = publicIpAddress
-                                echo "Public IP Address Is: ${publicIpAddress}"
+                                echo "Public IP Address Is: '${publicIpAddress}'"
                             }
                             sh '''
-                                echo "Public IP Address Is: \$PUBLIC_UP_ADDRESS"
+                                echo "Public IP Address Is: '\$PUBLIC_UP_ADDRESS'"
                             '''
                         }
                     }
