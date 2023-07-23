@@ -1,5 +1,5 @@
-import com.seemscloud.requests.HttpRequest
+import com.seemscloud.mypublicipaddress.MyPublicIPAddress
 
 static def call() {
-    return HttpRequest.sendGetRequest("https://api.ipify.org?format=json")
+    return MyPublicIPAddress.getAddress()
 }
