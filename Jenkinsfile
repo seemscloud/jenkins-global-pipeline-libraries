@@ -1,6 +1,6 @@
 @Library('global-pipeline-libraries@main') _
 
-def dupa = ExampleClass.getString()
+def dupa = FooNotify.getString()
 
 pipeline {
     agent none
