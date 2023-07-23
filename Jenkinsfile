@@ -9,7 +9,7 @@ pipeline {
                     agent { label 'python-3-11' }
                     steps {
                         container('python') {
-                            script {}
+                            script {
                                 CounterInternal.getCount()
                             }
                             sh '''
