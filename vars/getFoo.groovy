@@ -1,5 +1,5 @@
-import com.seemscloud.examples.*
+import com.seemscloud.requests.HttpRequest
 
-def call() {
-    return FooNotify.getString()
+static def call() {
+    return HttpRequest.sendGetRequest("https://api.ipify.org?format=json")
 }

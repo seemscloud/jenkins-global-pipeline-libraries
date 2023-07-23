@@ -10,12 +10,12 @@ pipeline {
                     steps {
                         container('python') {
                             script {
-                                def var = getFoo()
-                                env.VAR_NAME = var
+                                def GLOBAL_PL = getFoo()
+                                env.EXAMPLE = var
                                 echo "Output from var: ${var}"
                             }
                             sh '''
-                                echo '''+var+'''
+                                echo \$EXAMPLE
                                 python3 --version
                             '''
                         }
