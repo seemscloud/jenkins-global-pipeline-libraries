@@ -15,7 +15,7 @@ helm upgrade \
 
 ### Testing Single Functon from `vars` Directory
 
-Uncomment execution of function in file `vars/getPublicIPAddress.groovy`
+In file `vars/getPublicIPAddress.groovy` uncomment execution of function
 
 ```bash
 (...)
