@@ -4,8 +4,13 @@ import com.seemscloud.requests.HttpRequest
 
 class MyPublicIPAddress {
     static String getAddress() {
-        String myIp = HttpRequest.sendGetRequest("https://api.ipify.org?format=json")
+        String result = HttpRequest.sendGetRequest("https://api.ipify.org?format=json")
 
-        return myIp;
+        println("Status Code ${result.responseCode}")
+        if (result.responseCode == 200) {
+            return result.response
+        } else {
+            return result.response
+        }
     }
 }
