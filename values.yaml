@@ -62,9 +62,7 @@ controller:
       pipeline-jobs: |
         jobs:
           - script: >
-              folder('Foo');
-              folder('Foo/Bar');
-              pipelineJob('Foo/Bar/global-pipeline-libraries') {
+              pipelineJob('global-pipeline-libraries') {
                 definition {
                   cpsScm {
                     scm {
