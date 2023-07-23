@@ -6,8 +6,8 @@ class PublicIP {
     static final Set<String> apis = ["api", "api64"]
     static final Set<String> formats = ["text", "json", "jsonp"]
 
-    static String getAddress(String format = "text", String type = "IPv4") {
-        String url = "https://${getApiType(type)}.ipify.org?format=${getFormatType(format)}"
+    static String getAddress(String format, String api) {
+        String url = "https://${getApiType(api)}.ipify.org?format=${getFormatType(format)}"
         LinkedHashMap<String, Object> result = HttpRequest.sendGetRequest(url)
 
         if (result.responseCode == 200) {
