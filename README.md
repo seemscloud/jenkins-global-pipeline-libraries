@@ -28,3 +28,9 @@ Execute from command line
 ```bash
 groovy -cp src/ vars/getPublicIPAddress.groovy
 ```
+
+## Groovy Basics
+
+```bash
+static 
+```
