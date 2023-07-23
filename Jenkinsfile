@@ -1,7 +1,5 @@
 @Library('global-pipeline-libraries@main') _
 
-def dupa = FooNotify.getString()
-
 pipeline {
     agent none
     stages {
