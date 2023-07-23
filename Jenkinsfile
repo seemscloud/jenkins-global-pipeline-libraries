@@ -15,7 +15,7 @@ pipeline {
                                 echo "Public IP Address Is: ${publicIpAddress}"
                             }
                             sh '''
-                                echo "Pubic IP Address Is: \$PUBLIC_UP_ADDRESS"
+                                echo "Public IP Address Is: \$PUBLIC_UP_ADDRESS"
                             '''
                         }
                     }
