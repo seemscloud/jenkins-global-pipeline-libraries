@@ -1,4 +1,4 @@
-package com.seemscloud.shared
+package src.com.seemscloud
 
 class Counter {
     static int count = 0
