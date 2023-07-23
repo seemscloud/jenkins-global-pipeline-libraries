@@ -8,9 +8,10 @@ pipeline {
                 stage('Python 3.11') {
                     agent { label 'python-3-11' }
                     steps {
-                        FooNotify.getString()
+                        scripts {
+                            FooNotify.getString()
+                        }
                         container('python') {
-
                             sh '''
                                 python3 --version
                             '''
