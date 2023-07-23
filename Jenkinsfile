@@ -11,10 +11,11 @@ pipeline {
                         container('python') {
                             script {
                                 def var = getFoo()
+                                env.VAR_NAME = var
                                 echo "Output from var: ${var}"
                             }
                             sh '''
-                                echo "-> \$var"
+                                echo "-> \$VAR_NAME"
                                 python3 --version
                             '''
                         }
