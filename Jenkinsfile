@@ -16,6 +16,7 @@ pipeline {
                             }
                             sh '''
                                 echo "-> \$VAR_NAME"
+                                echo "x''' + var +  '''x"
                                 python3 --version
                             '''
                         }
