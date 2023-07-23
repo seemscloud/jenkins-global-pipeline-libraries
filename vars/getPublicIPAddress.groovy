@@ -1,5 +1,5 @@
 import com.seemscloud.publicipaddress.PublicIP
 
 static def call() {
-    return PublicIP.getAddress("json")
+    return PublicIP.getAddress("text", "api")
 }
