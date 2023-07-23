@@ -10,12 +10,12 @@ pipeline {
                     steps {
                         container('python') {
                             script {
-                                def getMyPublicIPAddress = getMyPublicIPAddress()
-                                env.EXAMPLE = getMyPublicIPAddress
-                                echo "Output from var: ${getMyPublicIPAddress}"
+                                def publicIpAddress = getPublicIPAddress()
+                                env.PUBLIC_UP_ADDRESS = publicIpAddress
+                                echo "Output from var: ${publicIpAddress}"
                             }
                             sh '''
-                                echo \$EXAMPLE
+                                echo \$PUBLIC_UP_ADDRESS
                                 python3 --version
                             '''
                         }

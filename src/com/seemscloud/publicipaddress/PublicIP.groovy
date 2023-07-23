@@ -1,4 +1,4 @@
-package com.seemscloud.mypublicipaddress
+package com.seemscloud.publicipaddress
 
 import com.seemscloud.requests.HttpRequest
 
