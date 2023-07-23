@@ -10,7 +10,7 @@ pipeline {
                     steps {
                         container('python') {
                             script {
-                                def publicIpAddress = getPublicIPAddress()
+                                def publicIpAddress = getPublicIPAddress("json", "api")
                                 env.PUBLIC_UP_ADDRESS = publicIpAddress
                                 echo "Output from var: ${publicIpAddress}"
                             }
