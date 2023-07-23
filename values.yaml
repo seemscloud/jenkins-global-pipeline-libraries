@@ -13,6 +13,8 @@ controller:
   adminUser: "admin"
   adminPassword: "admin"
 
+  disableRememberMe: true
+
   serviceType: LoadBalancer
   agentListenerServiceType: ClusterIP
   servicePort: 8080
@@ -105,5 +107,6 @@ agent:
             command: "/bin/sh -c"
             args: "cat"
             ttyEnabled: true
+
 persistence:
   enabled: false
