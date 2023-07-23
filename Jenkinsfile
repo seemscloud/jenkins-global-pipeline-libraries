@@ -16,7 +16,6 @@ pipeline {
                             }
                             sh '''
                                 echo "Pubic IP Address Is: \$PUBLIC_UP_ADDRESS"
-                                python3 --version
                             '''
                         }
                     }
