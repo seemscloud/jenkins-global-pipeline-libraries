@@ -11,7 +11,7 @@ class HttpRequest {
             connection.setRequestProperty(key, value)
         }
 
-        def responseCode = connection.responseCode
+        String responseCode = connection.responseCode
         def response = connection.inputStream.text
 
         def jsonResponse = null
