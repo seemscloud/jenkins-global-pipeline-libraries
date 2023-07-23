@@ -1,6 +1,6 @@
 package src.com.seemscloud
 
-public class CounterInternal {
+public static class CounterInternal {
     static int count = 0
 
     static void increment() {

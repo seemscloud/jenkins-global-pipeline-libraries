@@ -9,6 +9,7 @@ pipeline {
                     agent { label 'python-3-11' }
                     steps {
                         container('python') {
+                            CounterInternal.getCount()
                             sh '''
                                 python3 --version
                             '''
