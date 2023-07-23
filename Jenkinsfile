@@ -9,7 +9,8 @@ pipeline {
                     agent { label 'python-3-11' }
                     steps {
                         script {
-                            getFoo()
+                            def var = getFoo()
+                            echo "Output from var: ${var}"
                         }
                         container('python') {
                             sh '''
