@@ -8,11 +8,11 @@ pipeline {
                 stage('Python 3.11') {
                     agent { label 'python-3-11' }
                     steps {
-                        script {
-                            def var = getFoo()
-                            echo "Output from var: ${var}"
-                        }
                         container('python') {
+                            script {
+                                def var = getFoo()
+                                echo "Output from var: ${var}"
+                            }
                             sh '''
                                 echo "-> \$var"
                                 python3 --version
