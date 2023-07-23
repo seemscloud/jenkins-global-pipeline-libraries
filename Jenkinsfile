@@ -14,6 +14,7 @@ pipeline {
                         }
                         container('python') {
                             sh '''
+                                echo -> ""$var"
                                 python3 --version
                             '''
                         }
