@@ -3,7 +3,7 @@ package com.seemscloud.mypublicipaddress
 import com.seemscloud.requests.HttpRequest
 
 class MyPublicIPAddress {
-    static String getFromIpify(String format = null) {
+    static String getAIPAddress(String format = null) {
         def result = null
 
         if (format != null) {

@@ -1,5 +1,5 @@
 import com.seemscloud.mypublicipaddress.MyPublicIPAddress
 
 static def call() {
-    return MyPublicIPAddress.getFromIpify("jsonp")
+    return MyPublicIPAddress.getAIPAddress("json")
 }
