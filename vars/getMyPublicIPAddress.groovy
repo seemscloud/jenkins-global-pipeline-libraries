@@ -1,5 +1,5 @@
-import com.seemscloud.mypublicipaddress.MyPublicIPAddress
+import com.seemscloud.mypublicipaddress.PublicIP
 
 static def call() {
-    return MyPublicIPAddress.getAIPAddress("json")
+    return PublicIP.getAddress("json")
 }

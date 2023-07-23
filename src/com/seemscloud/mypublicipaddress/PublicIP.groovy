@@ -2,8 +2,8 @@ package com.seemscloud.mypublicipaddress
 
 import com.seemscloud.requests.HttpRequest
 
-class MyPublicIPAddress {
-    static String getAIPAddress(String format = null) {
+class PublicIP {
+    static String getAddress(String format = null) {
         def result = null
 
         if (format != null) {
