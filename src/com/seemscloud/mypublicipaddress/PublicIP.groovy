@@ -7,7 +7,7 @@ class PublicIP {
         def result = null
 
         if (format != null) {
-            result = HttpRequest.sendGetRequest("https://api.ipify.org?format=${format}")
+            result = HttpRequest.sendGetRequest("https://api.ipify.org?format=x${format}")
         } else {
             result = HttpRequest.sendGetRequest("https://api.ipify.org")
         }
