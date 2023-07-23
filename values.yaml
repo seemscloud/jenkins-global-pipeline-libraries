@@ -50,7 +50,7 @@ controller:
     configScripts:
       welcome-message: |
         jenkins:
-          systemMessage: <h1>Welcome</h1>
+          systemMessage: "<h1>Welcome</h1>"
       shared-libs: |
         unclassified:
           globalLibraries:
