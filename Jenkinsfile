@@ -1,5 +1,7 @@
 @Library('global-pipeline-libraries@main') _
 
+def dupa = ExampleClass.getString()
+
 pipeline {
     agent none
     stages {
