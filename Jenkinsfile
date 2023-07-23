@@ -12,10 +12,10 @@ pipeline {
                             script {
                                 def publicIpAddress = getPublicIPAddress("text", "api")
                                 env.PUBLIC_UP_ADDRESS = publicIpAddress
-                                echo "Public IP is: ${publicIpAddress}"
+                                echo "Public IP Address Is: ${publicIpAddress}"
                             }
                             sh '''
-                                echo \$PUBLIC_UP_ADDRESS
+                                echo "Pubic IP Address Is: \$PUBLIC_UP_ADDRESS"
                                 python3 --version
                             '''
                         }
