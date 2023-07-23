@@ -3,8 +3,14 @@ package com.seemscloud.mypublicipaddress
 import com.seemscloud.requests.HttpRequest
 
 class MyPublicIPAddress {
-    static String getAddress() {
-        def result = HttpRequest.sendGetRequest("https://api.ipify.org?format=json")
+    static String getFromIpify(String format = null) {
+        def result = null
+
+        if (format != null) {
+            result = HttpRequest.sendGetRequest("https://api.ipify.org?format=${format}")
+        } else {
+            result = HttpRequest.sendGetRequest("https://api.ipify.org")
+        }
 
         if (result.responseCode == 200) {
             return result.response
