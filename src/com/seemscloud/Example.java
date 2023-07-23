@@ -1,4 +1,4 @@
-package src.com.seemscloud;
+package com.seemscloud;
 
 class ExampleClass {
     static String dupa = "statyczne gowno"
