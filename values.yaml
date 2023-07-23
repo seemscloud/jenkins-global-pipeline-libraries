@@ -34,6 +34,7 @@ controller:
     - job-dsl:1.84
     - workflow-durable-task-step:1247.v7f9dfea_b_4fd0
 
+  overwritePluginsFromImage: false
   installLatestPlugins: true
   installLatestSpecifiedPlugins: false
 
