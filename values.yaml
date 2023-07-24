@@ -57,9 +57,6 @@ controller:
   JCasC:
     defaultConfig: true
     configScripts:
-      welcome-message: |
-        jenkins:
-          systemMessage: "<h1>Welcome</h1>"
       shared-libs: |
         unclassified:
           globalLibraries:
